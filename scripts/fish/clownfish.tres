@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://c2bro6vgkfhje"]
+
+[ext_resource type="Texture2D" uid="uid://ba4gfsw5wcvr6" path="res://assets/fish atlases/clownfish.tres" id="1_sakuh"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_mk2p1"]
+
+[resource]
+script = ExtResource("2_mk2p1")
+fish_name = "Clownfish"
+fish_sprite = ExtResource("1_sakuh")
+fish_weight = 0.5
+fish_price = 19.0
+fish_rarity = 5

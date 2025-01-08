@@ -1,0 +1,273 @@
+[gd_scene load_steps=4 format=3 uid="uid://fcfn0lf00gjo"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_4ebab"]
+[ext_resource type="FontFile" uid="uid://c64dshufp1gwx" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_018uy"]
+[ext_resource type="AudioStream" uid="uid://d31g7xjtt2bq1" path="res://assets/audio/cursor_select.wav" id="3_by64b"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_4ebab")
+
+[node name="Fishing_Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Fishing_Container" type="PanelContainer" parent="Fishing_Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.108025
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Fishing_ColorRect" type="ColorRect" parent="Fishing_Control/Fishing_Container"]
+layout_mode = 2
+color = Color(0.204326, 0.222027, 0.353212, 1)
+
+[node name="Fishing_Label" type="Label" parent="Fishing_Control/Fishing_Container"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "Fishing..."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Options_Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options_ColorRect" type="ColorRect" parent="Options_Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.202506, 0.301713, 0.374745, 1)
+
+[node name="Resume_Button" type="Button" parent="Options_Control/Options_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_top = 0.222222
+anchor_right = 0.666667
+anchor_bottom = 0.37037
+offset_left = 2.66689
+offset_top = 7.62939e-05
+offset_right = -2.66687
+offset_bottom = 2.66679
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
+[node name="Options_Button" type="Button" parent="Options_Control/Options_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3375
+anchor_top = 0.466667
+anchor_right = 0.6625
+anchor_bottom = 0.622222
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit_Button" type="Button" parent="Options_Control/Options_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3375
+anchor_top = 0.711111
+anchor_right = 0.6625
+anchor_bottom = 0.866667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Win_Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options_ColorRect" type="ColorRect" parent="Win_Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.202506, 0.301713, 0.374745, 1)
+
+[node name="Quit_Button" type="Button" parent="Win_Control/Options_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_top = 0.617284
+anchor_right = 0.666667
+anchor_bottom = 0.765432
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Win_Label" type="Label" parent="Win_Control/Options_ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -108.0
+offset_right = 128.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Your're Winner!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cash_Label" type="Label" parent="Win_Control/Options_ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -52.0
+offset_right = 104.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 16
+text = "Total Cash: $"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio_Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio_ColorRect" type="ColorRect" parent="Audio_Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.159114, 0.166329, 0.210643, 1)
+
+[node name="Audio_HScrollBar" type="HScrollBar" parent="Audio_Control/Audio_ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -136.0
+offset_right = 192.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Audio_Button" type="Button" parent="Audio_Control/Audio_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.325
+anchor_top = 0.0888889
+anchor_right = 0.675
+anchor_bottom = 0.311111
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio_Label" type="Label" parent="Audio_Control/Audio_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3875
+anchor_top = 0.422222
+anchor_right = 0.6125
+anchor_bottom = 0.555556
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio_Label2" type="Label" parent="Audio_Control/Audio_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1375
+anchor_top = 0.622222
+anchor_right = 0.1875
+anchor_bottom = 0.711111
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio_Label3" type="Label" parent="Audio_Control/Audio_ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8125
+anchor_top = 0.622222
+anchor_right = 0.8625
+anchor_bottom = 0.711111
+theme_override_fonts/font = ExtResource("1_018uy")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UISFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_by64b")
+
+[connection signal="pressed" from="Options_Control/Options_ColorRect/Resume_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Options_Control/Options_ColorRect/Options_Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Options_Control/Options_ColorRect/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Win_Control/Options_ColorRect/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="Audio_Control/Audio_ColorRect/Audio_HScrollBar" to="." method="_on_audio_scroll_bar_value_changed"]
+[connection signal="pressed" from="Audio_Control/Audio_ColorRect/Audio_Button" to="." method="_on_audio_button_pressed"]

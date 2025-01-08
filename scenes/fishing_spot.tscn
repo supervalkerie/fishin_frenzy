@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://c80kmur375s56"]
+
+[ext_resource type="Texture2D" uid="uid://c6e0i6ss3xobr" path="res://assets/circle_x128.png" id="1_ub5r8"]
+[ext_resource type="Script" path="res://scripts/fishing_spot.gd" id="1_xexms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ossj0"]
+radius = 54.0833
+
+[sub_resource type="Animation" id="Animation_n3vun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Target:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Target:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ihxq"]
+resource_name = "fishing_spot"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Target:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Target:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qfnmv"]
+_data = {
+"RESET": SubResource("Animation_n3vun"),
+"fishing_spot": SubResource("Animation_8ihxq")
+}
+
+[node name="FishingSpot" type="Node2D"]
+script = ExtResource("1_xexms")
+
+[node name="Target" type="Sprite2D" parent="."]
+texture = ExtResource("1_ub5r8")
+
+[node name="Area2D" type="Area2D" parent="Target"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target/Area2D"]
+shape = SubResource("CircleShape2D_ossj0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qfnmv")
+}
+
+[connection signal="mouse_entered" from="Target/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Target/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

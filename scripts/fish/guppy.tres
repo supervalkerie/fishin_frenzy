@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://dov1cxv1qvpca"]
+
+[ext_resource type="Texture2D" uid="uid://c33d7dfltuwr2" path="res://assets/fish atlases/guppy.tres" id="1_jxrrt"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_gahtw"]
+
+[resource]
+script = ExtResource("2_gahtw")
+fish_name = "Guppy"
+fish_sprite = ExtResource("1_jxrrt")
+fish_weight = 0.13
+fish_price = 12.0
+fish_rarity = 8

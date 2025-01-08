@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://b0klolxh0lbn5"]
+
+[ext_resource type="Texture2D" uid="uid://btqx0pd6cv3h0" path="res://assets/fish atlases/sand_dollar.tres" id="1_ujdwp"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_oc63x"]
+
+[resource]
+script = ExtResource("2_oc63x")
+fish_name = "Sand Dollar"
+fish_sprite = ExtResource("1_ujdwp")
+fish_weight = 0.015
+fish_price = 2.0
+fish_rarity = 10

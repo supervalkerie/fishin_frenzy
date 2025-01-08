@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://dfxcemwdkhtq8"]
+
+[ext_resource type="Texture2D" uid="uid://cs71bev73nv8u" path="res://assets/fish atlases/atlantic_bass.tres" id="1_2g7mt"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_tp3o2"]
+
+[resource]
+script = ExtResource("2_tp3o2")
+fish_name = "Atlantic Bass"
+fish_sprite = ExtResource("1_2g7mt")
+fish_weight = 15.0
+fish_price = 24.0
+fish_rarity = 3

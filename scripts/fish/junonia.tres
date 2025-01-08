@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://phf38k6jfmoi"]
+
+[ext_resource type="Texture2D" uid="uid://b2768rs7hylpf" path="res://assets/fish atlases/junonia.tres" id="1_fdm1k"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_ikg13"]
+
+[resource]
+script = ExtResource("2_ikg13")
+fish_name = "Junonia"
+fish_sprite = ExtResource("1_fdm1k")
+fish_weight = 4.0
+fish_price = 34.0
+fish_rarity = 2

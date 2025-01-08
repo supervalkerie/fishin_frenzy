@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://bq04qouwbdghy"]
+
+[ext_resource type="Texture2D" uid="uid://bhtismf5dcvx7" path="res://assets/fish atlases/dab.tres" id="1_0ny10"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_lqjel"]
+
+[resource]
+script = ExtResource("2_lqjel")
+fish_name = "Dab"
+fish_sprite = ExtResource("1_0ny10")
+fish_weight = 0.17
+fish_price = 14.0
+fish_rarity = 7

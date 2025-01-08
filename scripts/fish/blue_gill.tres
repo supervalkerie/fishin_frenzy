@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://dcknq33sbg4op"]
+
+[ext_resource type="Texture2D" uid="uid://hf2o3lqv64d7" path="res://assets/fish atlases/blue_gill.tres" id="1_qn5f2"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_7sn6w"]
+
+[resource]
+script = ExtResource("2_7sn6w")
+fish_name = "Blue Gill"
+fish_sprite = ExtResource("1_qn5f2")
+fish_weight = 0.23
+fish_price = 29.0
+fish_rarity = 4

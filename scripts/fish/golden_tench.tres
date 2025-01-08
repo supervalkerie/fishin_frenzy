@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://h1vystfe1ldy"]
+
+[ext_resource type="Texture2D" uid="uid://dqnvf0e1j754b" path="res://assets/fish atlases/golden_tench.tres" id="1_k35kc"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_j51xg"]
+
+[resource]
+script = ExtResource("2_j51xg")
+fish_name = "Golden Tench"
+fish_sprite = ExtResource("1_k35kc")
+fish_weight = 7.0
+fish_price = 28.0
+fish_rarity = 2

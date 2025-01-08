@@ -1,0 +1,139 @@
+[gd_scene load_steps=22 format=3 uid="uid://dki22up7mwegk"]
+
+[ext_resource type="Script" path="res://scripts/generated_fish.gd" id="2_4xryd"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_of3gg"]
+[ext_resource type="Resource" uid="uid://dfxcemwdkhtq8" path="res://scripts/fish/atlantic_bass.tres" id="2_w2b0q"]
+[ext_resource type="Resource" uid="uid://qw043iws7m2k" path="res://scripts/fish/axolotl.tres" id="4_0tavr"]
+[ext_resource type="Resource" uid="uid://c2bro6vgkfhje" path="res://scripts/fish/clownfish.tres" id="4_pjmjg"]
+[ext_resource type="Resource" uid="uid://dcknq33sbg4op" path="res://scripts/fish/blue_gill.tres" id="5_i1t6g"]
+[ext_resource type="Resource" uid="uid://bq04qouwbdghy" path="res://scripts/fish/dab.tres" id="5_nqy7s"]
+[ext_resource type="Resource" uid="uid://bqfyj2bekc1l4" path="res://scripts/fish/sea_spider.tres" id="6_l17f3"]
+[ext_resource type="Resource" uid="uid://bb5twxopaltdm" path="res://scripts/fish/freshwater_snail.tres" id="8_8uedp"]
+[ext_resource type="Resource" uid="uid://h1vystfe1ldy" path="res://scripts/fish/golden_tench.tres" id="9_n0ak4"]
+[ext_resource type="Resource" uid="uid://dov1cxv1qvpca" path="res://scripts/fish/guppy.tres" id="10_5t3w8"]
+[ext_resource type="Resource" uid="uid://cwj8jed1gt07n" path="res://scripts/fish/high_fin_banded_shark.tres" id="11_k5pco"]
+[ext_resource type="Resource" uid="uid://phf38k6jfmoi" path="res://scripts/fish/junonia.tres" id="12_27qk1"]
+[ext_resource type="Resource" uid="uid://bi56yuvwhdja2" path="res://scripts/fish/moss_ball.tres" id="13_8fan7"]
+[ext_resource type="Resource" uid="uid://ycqquc88d2ry" path="res://scripts/fish/plastic_bag.tres" id="14_r2tya"]
+[ext_resource type="Resource" uid="uid://b0klolxh0lbn5" path="res://scripts/fish/sand_dollar.tres" id="15_vyd65"]
+[ext_resource type="Resource" uid="uid://c66hr47tc5bee" path="res://scripts/fish/starfish.tres" id="17_rbysl"]
+[ext_resource type="FontFile" uid="uid://c64dshufp1gwx" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="18_rhcdr"]
+
+[sub_resource type="Animation" id="Animation_hjsf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 94)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.218234]
+}
+
+[sub_resource type="Animation" id="Animation_8uhxc"]
+resource_name = "caught_fish"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-86, 114), Vector2(-86, 114), Vector2(0, -31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.218234, 0.218234, -0.204336]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0f852"]
+_data = {
+"RESET": SubResource("Animation_hjsf4"),
+"caught_fish": SubResource("Animation_8uhxc")
+}
+
+[node name="Fish" type="Node2D"]
+position = Vector2(0, 94)
+rotation = 0.218234
+script = ExtResource("2_4xryd")
+fish_datas = Array[ExtResource("2_of3gg")]([ExtResource("2_w2b0q"), ExtResource("4_0tavr"), ExtResource("5_i1t6g"), ExtResource("4_pjmjg"), ExtResource("5_nqy7s"), ExtResource("8_8uedp"), ExtResource("9_n0ak4"), ExtResource("10_5t3w8"), ExtResource("11_k5pco"), ExtResource("12_27qk1"), ExtResource("13_8fan7"), ExtResource("14_r2tya"), ExtResource("15_vyd65"), ExtResource("6_l17f3"), ExtResource("17_rbysl")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+
+[node name="Name_Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_top = -82.0
+offset_right = 22.0
+offset_bottom = -59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("18_rhcdr")
+theme_override_font_sizes/font_size = 24
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight_Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.5
+offset_top = 53.0
+offset_right = 26.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("18_rhcdr")
+theme_override_font_sizes/font_size = 24
+text = "weight"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price_Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.184
+offset_top = 107.138
+offset_right = 55.816
+offset_bottom = 131.138
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("18_rhcdr")
+theme_override_font_sizes/font_size = 24
+text = "price"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0f852")
+}

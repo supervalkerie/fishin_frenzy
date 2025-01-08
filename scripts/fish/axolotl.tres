@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FishData" load_steps=3 format=3 uid="uid://qw043iws7m2k"]
+
+[ext_resource type="Texture2D" uid="uid://cvedtl0gjfjj6" path="res://assets/fish atlases/axolotl.tres" id="1_c6mbn"]
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="2_6culm"]
+
+[resource]
+script = ExtResource("2_6culm")
+fish_name = "Axolotl"
+fish_sprite = ExtResource("1_c6mbn")
+fish_weight = 0.01
+fish_price = 60.0
+fish_rarity = 1
